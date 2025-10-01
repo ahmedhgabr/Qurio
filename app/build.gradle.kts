@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -46,6 +46,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    // Dagger
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.scalars)
+    // room database
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
 }
