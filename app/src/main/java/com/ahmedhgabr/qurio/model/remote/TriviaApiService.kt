@@ -1,6 +1,7 @@
 package com.ahmedhgabr.qurio.model.remote
 
 import com.ahmedhgabr.qurio.model.remote.dto.QuestionsResponse
+import com.ahmedhgabr.qurio.model.remote.dto.TokenResponse
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -26,6 +27,9 @@ interface TriviaApiService {
         @Query("difficulty") difficulty: String? = null,
         @Query("token") type: String? = null
     ): QuestionsResponse
+
+    @GET("api_token.php?command=request")
+    suspend fun getToken(): TokenResponse
 }
 
 object TriviaApi {

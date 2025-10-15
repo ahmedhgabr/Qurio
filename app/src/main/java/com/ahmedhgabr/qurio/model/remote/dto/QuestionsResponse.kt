@@ -8,12 +8,12 @@ data class QuestionsResponse(
     @SerialName("response_code")
     override val responseCode: Int? = null,
     val results: List<QuestionDTO>
-): BaseResponse
+) : BaseResponse
 
 /**
-* @param type: "multiple" or "boolean",
-* @param difficulty: "easy", "medium", "hard"
-*/
+ * @param type: "multiple" or "boolean",
+ * @param difficulty: "easy", "medium", "hard"
+ */
 @Serializable
 data class QuestionDTO(
     val type: String,
