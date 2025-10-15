@@ -7,7 +7,7 @@ import com.ahmedhgabr.qurio.databinding.ActivityMainBinding
 import com.ahmedhgabr.qurio.presenter.BasePresenter
 import com.ahmedhgabr.qurio.ui.BaseView
 
-class MainActivity : AppCompatActivity() , BaseView {
+class MainActivity : AppCompatActivity(), BaseView {
 
     lateinit var binding: ActivityMainBinding
     private val presenter = BasePresenter()
@@ -20,12 +20,16 @@ class MainActivity : AppCompatActivity() , BaseView {
         setup()
     }
 
-    private fun setup(){
+    private fun setup() {
         presenter.view = this
         presenter.getInfo()
         binding.button.setOnClickListener {
             presenter.getWisdom()
         }
+    }
+
+    override fun onError(message: Throwable) {
+        binding.textView.text = getString(R.string.network_error)
     }
 
     override fun onInfoReceived(info: String) {

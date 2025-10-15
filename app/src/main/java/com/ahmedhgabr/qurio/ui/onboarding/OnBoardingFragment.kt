@@ -11,4 +11,8 @@ class OnBoardingFragment : BaseFragment(), BaseView {
     override fun onRandomInfoReceived(info: String) {
         TODO("Not yet implemented")
     }
+
+    override fun onError(message: Throwable) {
+        TODO("Not yet implemented")
+    }
 }

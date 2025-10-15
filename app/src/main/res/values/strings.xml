@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Qurio</string>
+    <string name="no_connection">No Connection</string>
+    <string name="network_error">Oops! It looks like you’re offline. Please check your internet connection to continue playing</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
 </resources>
