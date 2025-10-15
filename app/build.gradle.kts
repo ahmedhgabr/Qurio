@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -50,8 +51,10 @@ dependencies {
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
     // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.scalars)
+    // Kotlin serialization
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.serialization.converter)
+    implementation(libs.okhttp)
     // room database
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
