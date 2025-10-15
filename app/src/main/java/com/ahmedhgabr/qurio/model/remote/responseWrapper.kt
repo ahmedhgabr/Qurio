@@ -18,7 +18,7 @@ suspend fun <T : BaseResponse> responseWrapper(
     try {
         val result = block()
         when (result.responseCode) {
-            successCode -> return result
+            successCode , null -> return result
             noResultsCode -> throw QurioExceptions.ServerException("No results could be returned for the given query.")
             invalidParameterCode -> throw QurioExceptions.ServerException("Invalid parameter in the API request.")
             tokenNotFoundCode -> throw QurioExceptions.TokenNotFound("Session Token does not exist.")
@@ -31,7 +31,6 @@ suspend fun <T : BaseResponse> responseWrapper(
             e.localizedMessage ?: "Please check your internet connection."
         )
     } catch (e: QurioExceptions) {
-
         throw e
     } catch (e: Exception) {
         throw QurioExceptions.UnknownException(e.localizedMessage ?: "An unknown error occurred")

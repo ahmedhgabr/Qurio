@@ -1,5 +1,6 @@
 package com.ahmedhgabr.qurio.model.remote
 
+import com.ahmedhgabr.qurio.model.remote.dto.CategoriesResponse
 import com.ahmedhgabr.qurio.model.remote.dto.QuestionsResponse
 import com.ahmedhgabr.qurio.model.remote.dto.TokenResponse
 import retrofit2.Retrofit
@@ -30,10 +31,13 @@ interface TriviaApiService {
 
     @GET("api_token.php?command=request")
     suspend fun getToken(): TokenResponse
+
+    @GET("api_category.php")
+    suspend fun getCategories(): CategoriesResponse
 }
 
 object TriviaApi {
-    val retrofitService : TriviaApiService by lazy {
+    val retrofitService: TriviaApiService by lazy {
         retrofit.create(TriviaApiService::class.java)
     }
 }
