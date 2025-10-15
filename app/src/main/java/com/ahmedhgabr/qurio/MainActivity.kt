@@ -3,18 +3,38 @@ package com.ahmedhgabr.qurio
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.ahmedhgabr.qurio.databinding.ActivityMainBinding
+import com.ahmedhgabr.qurio.presenter.BasePresenter
+import com.ahmedhgabr.qurio.ui.BaseView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , BaseView {
+
+    lateinit var binding: ActivityMainBinding
+    private val presenter = BasePresenter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setup()
+    }
+
+    private fun setup(){
+        presenter.view = this
+        presenter.getInfo()
+        binding.button.setOnClickListener {
+            presenter.getWisdom()
         }
     }
+
+    override fun onInfoReceived(info: String) {
+        binding.textView.text = info
+    }
+
+    override fun onRandomInfoReceived(info: String) {
+        binding.textView.text = info
+    }
+
+
 }
