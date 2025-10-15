@@ -26,7 +26,7 @@ interface TriviaApiService {
         @Query("amount") amount: Int,
         @Query("category") category: Int? = null,
         @Query("difficulty") difficulty: String? = null,
-        @Query("token") type: String? = null
+        @Query("token") token: String? = null
     ): QuestionsResponse
 
     @GET("api_token.php?command=request")
