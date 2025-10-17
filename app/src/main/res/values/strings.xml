@@ -4,6 +4,28 @@
     <string name="network_error">Oops! It looks like you’re offline. Please check your internet connection to continue playing</string>
     <string name="retry">Retry</string>
     <string name="unknown_error">Unknown Error</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="icon_plus">Icon Plus</string>
+    <string name="lives">lives</string>
+    <string name="points">Points</string>
+    <string name="awards">Awards</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="character_image">Character Image</string>
+    <string name="welcome_qurio_explorer">Welcome Qurio explorer</string>
+    <string name="icon_settings">Icon Settings</string>
+    <string name="icon_back">Icon Back</string>
+    <string name="icon_coin">Icon Coin</string>
+    <string name="icon_crown">Icon Crown</string>
+    <string name="icon_coin_stack">Icon Coin Stack</string>
+    <string name="icon_arrow_right">Icon Arrow Right</string>
+    <string name="icon_cup">Icon Cup</string>
+    <string name="icon_star">Icon Star</string>
+    <string name="reward">Reward</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">incorrect</string>
+    <string name="skipped">skipped</string>
+    <string name="great_job">Great Jop</string>
+    <string name="you_lose">You Lose</string>
+    <string name="image_streak">Image Streak</string>
+    <string name="streak_title"> day streak, start make a series</string>
+    <string name="every_day_count">Every day count!</string>
 </resources>
