@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Headline">
+        <item name="android:fontFamily">@font/fredoka_one</item>
+    </style>
+
+    <style name="Headline.Large" parent="Headline">
+        <item name="android:textSize">28sp</item>
+        <item name="lineHeight">42dp</item>
+    </style>
+
+    <style name="Headline.Medium" parent="Headline">
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">36dp</item>
+    </style>
+
+    <style name="Headline.Small" parent="Headline">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">30dp</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:fontFamily">@font/fredoka_one</item>
+    </style>
+
+    <style name="Title.Large" parent="Title">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">30dp</item>
+    </style>
+
+    <style name="Title.Medium" parent="Title">
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">28dp</item>
+    </style>
+
+    <style name="Title.Small" parent="Title">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="Body">
+        <item name="android:fontFamily">@font/fredoka_regular</item>
+    </style>
+
+    <style name="Body.Large" parent="Body">
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">28dp</item>
+    </style>
+
+    <style name="Body.Medium" parent="Body">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="Body.Small" parent="Body">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">22dp</item>
+    </style>
+
+    <style name="Label">
+        <item name="android:fontFamily">@font/fredoka_one</item>
+    </style>
+
+    <style name="Label.Large" parent="Label">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+
+    <style name="Label.Medium" parent="Label">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">22dp</item>
+    </style>
+
+    <style name="Label.Small" parent="Label">
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+
+    <style name="Label.XSmall" parent="Label">
+        <item name="android:fontFamily">@font/fredoka_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">14dp</item>
+    </style>
+
+    <style name="ResultCardShape">
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerSizeTopRight">2dp</item>
+        <item name="cornerSizeBottomLeft">2dp</item>
+        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+    </style>
+</resources>
