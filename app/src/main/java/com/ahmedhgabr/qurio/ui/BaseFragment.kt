@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.ahmedhgabr.qurio.presenter.BasePresenter
@@ -25,6 +28,12 @@ abstract class BaseFragment<VB : ViewBinding, VIEW : BaseView, PRESENTER : BaseP
         savedInstanceState: Bundle?
     ): View {
         _binding = initViewBinding(inflater, container)
+        // Apply status bar inset as top padding to avoid overlap with the system status bar
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val statusBarInsets = insets.getInsets(WindowInsetsCompat.Type.statusBars())
+            v.updatePadding(top = statusBarInsets.top)
+            insets
+        }
         return binding.root
     }
 
