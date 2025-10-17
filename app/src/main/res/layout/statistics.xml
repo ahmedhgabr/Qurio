@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Lives -->
+    <View
+        android:id="@+id/lives_container"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:background="@drawable/lives_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/points_container"
+        app:layout_constraintBottom_toBottomOf="@+id/points_container" />
+
+    <ImageView
+        android:id="@+id/add_lives"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@string/icon_plus"
+        android:src="@drawable/ic_plus"
+        android:translationX="-2dp"
+        app:layout_constraintStart_toStartOf="@id/lives_container"
+        app:layout_constraintTop_toTopOf="@id/lives_container" />
+
+    <TextView
+        android:id="@+id/title_lives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/lives"
+        android:textAppearance="@style/Label.XSmall"
+        android:textColor="@color/shade_tertiary"
+        app:layout_constraintEnd_toEndOf="@id/lives_container"
+        app:layout_constraintStart_toStartOf="@id/lives_container"
+        app:layout_constraintTop_toTopOf="@id/lives_container" />
+
+    <ImageView
+        android:id="@+id/icon_coin"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@string/icon_coin"
+        android:src="@drawable/ic_coin"
+        app:layout_constraintEnd_toStartOf="@+id/lives_count"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/lives_container"
+        app:layout_constraintTop_toBottomOf="@id/title_lives" />
+
+    <TextView
+        android:id="@+id/lives_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="0"
+        android:textAppearance="@style/Label.Medium"
+        android:textColor="@color/shade_primary"
+        app:layout_constraintBottom_toBottomOf="@id/icon_coin"
+        app:layout_constraintEnd_toEndOf="@id/lives_container"
+        app:layout_constraintStart_toEndOf="@+id/icon_coin"
+        app:layout_constraintTop_toTopOf="@id/icon_coin"
+        tools:text="4" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/top_rounded_bar"
+        app:layout_constraintBottom_toBottomOf="@id/lives_container"
+        app:layout_constraintEnd_toEndOf="@id/lives_container"
+        app:layout_constraintStart_toStartOf="@id/lives_container" />
+
+    <!-- Points -->
+    <View
+        android:id="@+id/points_container"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="@drawable/points_background"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/lives_container"
+        app:layout_constraintEnd_toStartOf="@+id/awards_container"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="20dp"
+        android:contentDescription="@string/icon_crown"
+        android:src="@drawable/ic_crown"
+        android:translationY="-10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/points_container"
+        app:layout_constraintStart_toStartOf="@id/points_container"
+        app:layout_constraintTop_toTopOf="@id/points_container" />
+
+    <TextView
+        android:id="@+id/points_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/points"
+        android:textAppearance="@style/Label.XSmall"
+        android:textColor="@color/shade_tertiary"
+        app:layout_constraintEnd_toEndOf="@id/points_container"
+        app:layout_constraintStart_toStartOf="@id/points_container"
+        app:layout_constraintTop_toTopOf="@id/points_container" />
+
+    <ImageView
+        android:id="@+id/points_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@string/icon_coin_stack"
+        android:src="@drawable/ic_coin_stack"
+        app:layout_constraintEnd_toStartOf="@+id/points_count"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/points_container"
+        app:layout_constraintTop_toBottomOf="@id/points_label" />
+
+    <TextView
+        android:id="@+id/points_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:text="0"
+        android:textAppearance="@style/Label.Medium"
+        android:textColor="@color/shade_primary"
+        app:layout_constraintBottom_toBottomOf="@id/points_icon"
+        app:layout_constraintEnd_toEndOf="@id/points_container"
+        app:layout_constraintStart_toEndOf="@+id/points_icon"
+        app:layout_constraintTop_toTopOf="@id/points_icon"
+        tools:text="5200" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/top_rounded_bar"
+        app:layout_constraintBottom_toBottomOf="@id/points_container"
+        app:layout_constraintEnd_toEndOf="@id/points_container"
+        app:layout_constraintStart_toStartOf="@id/points_container" />
+
+    <!-- Awards -->
+    <View
+        android:id="@+id/awards_container"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:background="@drawable/awards_background"
+        app:layout_constraintStart_toEndOf="@+id/points_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/points_container"/>
+
+    <TextView
+        android:id="@+id/awards_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/awards"
+        android:textAppearance="@style/Label.XSmall"
+        android:textColor="@color/shade_tertiary"
+        app:layout_constraintEnd_toEndOf="@id/awards_container"
+        app:layout_constraintStart_toStartOf="@id/awards_container"
+        app:layout_constraintTop_toTopOf="@id/awards_container" />
+
+    <ImageView
+        android:id="@+id/awards_icon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@string/icon_cup"
+        android:src="@drawable/ic_cup"
+        app:layout_constraintEnd_toStartOf="@+id/awards_count"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/awards_container"
+        app:layout_constraintTop_toBottomOf="@id/awards_label" />
+
+    <TextView
+        android:id="@+id/awards_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="0"
+        android:textAppearance="@style/Label.Medium"
+        android:textColor="@color/shade_primary"
+        app:layout_constraintBottom_toBottomOf="@id/awards_icon"
+        app:layout_constraintEnd_toStartOf="@id/btn_upgrade_awards"
+        app:layout_constraintStart_toEndOf="@+id/awards_icon"
+        app:layout_constraintTop_toTopOf="@id/awards_icon"
+        tools:text="2" />
+
+    <ImageView
+        android:id="@+id/btn_upgrade_awards"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/icon_arrow_right"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/awards_icon"
+        app:layout_constraintEnd_toEndOf="@id/awards_container"
+        app:layout_constraintStart_toEndOf="@+id/awards_count"
+        app:layout_constraintTop_toTopOf="@id/awards_icon" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/top_rounded_bar"
+        app:layout_constraintBottom_toBottomOf="@id/awards_container"
+        app:layout_constraintEnd_toEndOf="@id/awards_container"
+        app:layout_constraintStart_toStartOf="@id/awards_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
