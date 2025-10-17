@@ -19,17 +19,13 @@ abstract class BaseFragment<VB : ViewBinding, VIEW : BaseView, PRESENTER : BaseP
         container: ViewGroup?
     ): VB
 
+
     protected lateinit var _presenter: PRESENTER
-    protected val presenter get() = _presenter
 
-    protected abstract fun initPresenter(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): PRESENTER
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+//    protected abstract fun initPresenter(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?
+//    ): PRESENTER
 
     override fun onCreateView(
         inflater: LayoutInflater,
