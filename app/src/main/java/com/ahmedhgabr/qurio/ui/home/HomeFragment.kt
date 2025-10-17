@@ -30,18 +30,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeView, HomePresenter>(
         return FragmentHomeBinding.inflate(inflater, container, false)
     }
 
-
-//    override fun initPresenter(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?
-//    ): HomePresenter {
-//        return HomePresenter(
-//            this,
-//            repo = triviaRepository
-//        )
-//    }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setup()

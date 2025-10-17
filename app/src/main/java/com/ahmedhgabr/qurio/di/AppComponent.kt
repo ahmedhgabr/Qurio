@@ -1,7 +1,6 @@
 package com.ahmedhgabr.qurio.di
 
 import android.app.Application
-import com.ahmedhgabr.qurio.MainActivity
 import com.ahmedhgabr.qurio.QurioApplication
 import com.ahmedhgabr.qurio.ui.game.GameFragment
 import com.ahmedhgabr.qurio.ui.home.HomeFragment

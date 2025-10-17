@@ -19,14 +19,6 @@ abstract class BaseFragment<VB : ViewBinding, VIEW : BaseView, PRESENTER : BaseP
         container: ViewGroup?
     ): VB
 
-
-    protected lateinit var _presenter: PRESENTER
-
-//    protected abstract fun initPresenter(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?
-//    ): PRESENTER
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
