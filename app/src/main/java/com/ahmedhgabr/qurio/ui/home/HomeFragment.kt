@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmedhgabr.qurio.QurioApplication
 import com.ahmedhgabr.qurio.databinding.FragmentHomeBinding
 import com.ahmedhgabr.qurio.presenter.HomePresenter
@@ -16,6 +17,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeView, HomePresenter>(
 
     @Inject
     lateinit var presenter: HomePresenterI
+
+    private lateinit var categoryAdapter: CategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +39,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeView, HomePresenter>(
     }
 
     private fun setup() {
+        categoryAdapter = CategoryAdapter(emptyList())
+        binding.categoriesRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = categoryAdapter
+        }
         presenter.loadCategories()
     }
 
     override fun showCategories(categories: List<Category>) {
-        binding.questionText.text = categories.toString()
+        categoryAdapter.categories = categories
+        categoryAdapter.notifyDataSetChanged()
     }
 }
