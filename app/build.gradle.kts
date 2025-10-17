@@ -49,6 +49,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     // Dagger
     implementation(libs.dagger)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     kapt(libs.dagger.compiler)
     // Retrofit
     // Kotlin serialization
