@@ -4,5 +4,7 @@ import com.ahmedhgabr.qurio.presenter.entity.question.Question
 import com.ahmedhgabr.qurio.ui.BaseView
 
 interface GameView : BaseView {
-    fun showQuestions(questions: List<Question>)
+    fun onNextQuestionClicked()
+    fun showNextQuestion(question: Question)
+    fun goBack()
 }

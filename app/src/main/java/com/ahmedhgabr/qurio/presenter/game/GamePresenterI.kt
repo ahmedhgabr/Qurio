@@ -5,4 +5,5 @@ import com.ahmedhgabr.qurio.ui.game.GameView
 
 interface GamePresenterI : Presenter<GameView> {
     fun loadQuestions(questionCount: Int, categoryId: Int, difficulty: String)
+    fun showNextQuestion()
 }
