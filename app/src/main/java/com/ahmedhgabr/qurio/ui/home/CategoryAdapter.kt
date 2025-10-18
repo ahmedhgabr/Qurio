@@ -7,7 +7,7 @@ import com.ahmedhgabr.qurio.R
 import com.ahmedhgabr.qurio.databinding.ItemCategoryBinding
 import com.ahmedhgabr.qurio.presenter.entity.Category
 
-class CategoryAdapter(var categories: List<Category>) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter(var categories: List<Category>, private val onCategoryClick: (Category) -> Unit) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -15,15 +15,16 @@ class CategoryAdapter(var categories: List<Category>) : RecyclerView.Adapter<Cat
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(categories[position])
+        holder.bind(categories[position], onCategoryClick)
     }
 
     override fun getItemCount() = categories.size
 
     class CategoryViewHolder(private val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(category: Category) {
+        fun bind(category: Category, onCategoryClick: (Category) -> Unit) {
             binding.categoryName.text = category.name
             binding.categoryImage.setImageResource(getImagesForCategory(category.id))
+            itemView.setOnClickListener { onCategoryClick(category) }
         }
 
         private fun getImagesForCategory(categoryId: Int): Int {

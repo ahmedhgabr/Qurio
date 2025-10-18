@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmedhgabr.qurio.QurioApplication
 import com.ahmedhgabr.qurio.databinding.FragmentHomeBinding
@@ -39,7 +40,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeView, HomePresenter>(
     }
 
     private fun setup() {
-        categoryAdapter = CategoryAdapter(emptyList())
+        categoryAdapter = CategoryAdapter(emptyList()) { category ->
+            val action = HomeFragmentDirections.actionHomeFragmentToGameFragment(category.id)
+            findNavController().navigate(action)
+        }
         binding.categoriesRecyclerView.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = categoryAdapter

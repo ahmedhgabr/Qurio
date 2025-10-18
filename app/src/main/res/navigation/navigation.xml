@@ -9,5 +9,24 @@
         android:id="@+id/homeFragment"
         android:name="com.ahmedhgabr.qurio.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment">
+            <argument
+                android:name="category_id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.ahmedhgabr.qurio.ui.game.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game">
+        <argument
+            android:name="category_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

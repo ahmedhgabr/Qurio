@@ -16,7 +16,13 @@ class GameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        val categoryId = GameFragmentArgs.fromBundle(requireArguments()).categoryId
+        android.widget.Toast.makeText(
+            requireContext(),
+            "Category id: $categoryId",
+            android.widget.Toast.LENGTH_SHORT
+        ).show()
+
         return inflater.inflate(R.layout.fragment_game, container, false)
     }
 
