@@ -1,6 +1,6 @@
 package com.ahmedhgabr.qurio.di
-import com.ahmedhgabr.qurio.presenter.HomePresenter
-import com.ahmedhgabr.qurio.presenter.HomePresenterI
+import com.ahmedhgabr.qurio.presenter.home.HomePresenter
+import com.ahmedhgabr.qurio.presenter.home.HomePresenterI
 import dagger.Binds
 import dagger.Module
 

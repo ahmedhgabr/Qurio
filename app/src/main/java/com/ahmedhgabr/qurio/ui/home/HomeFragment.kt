@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmedhgabr.qurio.QurioApplication
 import com.ahmedhgabr.qurio.databinding.FragmentHomeBinding
-import com.ahmedhgabr.qurio.presenter.HomePresenter
-import com.ahmedhgabr.qurio.presenter.HomePresenterI
+import com.ahmedhgabr.qurio.presenter.home.HomePresenter
+import com.ahmedhgabr.qurio.presenter.home.HomePresenterI
 import com.ahmedhgabr.qurio.presenter.entity.Category
 import com.ahmedhgabr.qurio.ui.BaseFragment
 import javax.inject.Inject
