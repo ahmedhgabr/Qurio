@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlin.serialization)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -49,8 +50,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     // Dagger
     implementation(libs.dagger)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
     kapt(libs.dagger.compiler)
     // Retrofit
     // Kotlin serialization
